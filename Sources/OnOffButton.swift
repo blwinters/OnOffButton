@@ -135,7 +135,7 @@ open class OnOffButton: UIButton {
         shapeLayer.fillColor     = nil
         shapeLayer.lineWidth     = lineWidth
         shapeLayer.miterLimit    = miterLimit
-        shapeLayer.lineCap       = kCALineCapRound
+        shapeLayer.lineCap       = CAShapeLayerLineCap.round
         shapeLayer.masksToBounds = false
     }
 
@@ -219,7 +219,7 @@ extension CALayer {
         }
     }
 
-    func performWithoutAnimation(_ closure: (Void) -> Void) {
+    func performWithoutAnimation(_ closure: () -> Void) {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         closure()
